@@ -1,0 +1,131 @@
+<html>
+<head>
+<title> Sign up!</title>
+<style type="text/css">
+
+.overlay {
+  width: 50%;
+  height: 20%;
+  left: 25%;
+  top: 10%;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+#bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://schoolbook.getmyuni.com/assets/images/rev_img/47985__29497/1508574295IMG_20171021_135236_816.JPG) no-repeat center center fixed;
+  background-size: cover ;
+  -webkit-filter: blur(4px);
+}
+
+form {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  background: rgba(130,130,130,.3);
+  padding: 62px 52px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+}
+
+form input, form button {
+  width: 248px;
+  border: 1px solid;
+  border-bottom-color: rgba(255,255,255,.5);
+  border-right-color: rgba(60,60,60,.35);
+  border-top-color: rgba(60,60,60,.35);
+  border-left-color: rgba(80,80,80,.45);
+  background-color: rgba(0,0,0,.2);
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 10px;
+  font: bold .875em/1.25em "Lucida Sans", sans-serif;
+  letter-spacing: .075em;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  margin-bottom: 5px;
+}
+form input:focus { background-color: rgba(0,0,0,.4); }
+
+form input.firstname {
+
+  background-position: 220px 10px
+}
+
+form input.lastname {
+
+  background-position: 220px 10px
+}
+form input.username {
+
+  background-position: 220px 10px
+}
+form input.useremail {
+
+  background-position: 220px 10px
+}
+form input.password {
+
+  background-position: 220px 10px
+}
+
+
+form button[type=submit] {
+  width: 248px;
+  margin-bottom: 0px;
+  color: #ec3109;
+  letter-spacing: .05em;
+  text-shadow: 0 1px 0 #133d3e;
+  text-transform: uppercase;
+  background: #04223a;
+  border-top-color: #1b4849;
+  border-left-color: #608586;
+  border-bottom-color: #1b4849;
+  border-right-color: #608586;
+  cursor: pointer;
+}
+</style>
+</head>
+
+
+<title>
+Sign up!
+</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="bg"> </div>
+<div style="text-align: center">
+
+<form method="POST" action="signup.php">
+<h2 style ="color:#04223a;"> Sign Up </h2>
+<br>
+<div>
+ <input type="text" name="firstname" placeholder="First Name" id="firstname"required><br>
+<br>
+ <input type="text" name="lastname"placeholder="Last Name" id="lastname"required><br>
+<br>
+ <input type="text" name="username" placeholder="Username" id="username"required><br>
+<br>
+ <input type="email" name="useremail" placeholder="Email ID" id="useremail"required><br>
+ <br>
+ <input type="password" name="password" placeholder="Password" id="password" required><br>
+ <br>
+<input type="password" name="rewrite" placeholder="Confirm Password" id="rewrite" required><br>
+ <br>
+<a href="signup.php"><button class="submit" name="submit" type="submit"  value="insert">Sign Up</button>
+</form>
+
+</div>
+</body>
+</html>
