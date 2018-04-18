@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Voting system</title>
+<style>
+body {
+   background-color:cornflowerblue;
+   text-align: center;
+     }
+.displaybox {
+   margin: auto;
+   width: 150px;
+   background-color: #888888;
+   border: 2px solid #000000;
+  padding: 30px;
+   font: 1.5em normal verdana, helvetica, arial, sans-serif;
+     text-align:left;     
+}
+
+</style>
+
+<script type="text/javascript">
+var ajaxRequest=new XMLHttpRequest();
+function getcandidatelist()  
+{
+   if (!ajaxRequest)  {
+         document.getElementById("showcandidate").innerHTML = "Request error!ajax object could not be created";
+         return;      } 
+   ajaxRequest.onreadystatechange = ajaxResponse;
+   ajaxRequest.open("GET","vote.php");
+   ajaxRequest.send();
+}
+function ajaxResponse()  //This gets called when the readyState changes.
+{
+ if (ajaxRequest.readyState != 4)  //  check to see if we're done
+    {  return;  }
+ else {
+   if (ajaxRequest.status == 200) //  check to see if successful
+        {
+                 document.getElementById("showcandidate").innerHTML =
+                               ajaxRequest.responseText; }
+   else {
+     alert("Request failed: " + ajaxRequest.statusText);
+        }
+   }
+}
+function verification()
+	{
+ document.getElementById("check").innerHTML=document.getElementById("myform").elements['Nominee_1'].value
+}
+function getVotinglist()
+{
+if(!ajaxobject)
+  {
+       document.getElementById("vote").innerHTML="Ajax object not created";
+   return;
+	  }
+	  	  ajaxobject.open("GET","vote.php");
+	  	  ajaxobject.send();
+	  	  ajaxobject.onreadystatechange=getResponse; 	
+}
+	function getResponse(){
+		if(ajaxobject.readyState == 4 && ajaxobject.status == 200)
+		{
+			document.getElementById('vote').innerHTML=ajaxobject.responseText;
+		}
+	}
+function changecolor()
+	{
+		count++;
+		var col="red";
+		if(count%2==0)
+			col="blue";
+		else
+			col="red";
+		document.getElementById('showcandidate').style.backgroundColor=col;
+	}
+		
+</script>
+</head>
+<body>
+<a href="logout.php" align="right"><button>logout</button></a>
+    
+	<h1>Elections</h1>
+
+	<h2>Please elect most appropriate person!!</h2>
+
+	<form >
+   	   <input type="button" value="Get contender list"  onclick="getcandidatelist();"/>
+		
+	</form>
+
+	<div id="showcandidate" class="displaybox">
+	</div>
+	<br>
+	<input type="submit" value="Submit" onclick="verification();"/>
+	<br>
+	<br>
+	<div id="check" class="displaybox">
+</div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
